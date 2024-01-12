@@ -3,7 +3,7 @@
 def print_reversed_list_integer(my_list=[]):
     len_of_list = len(my_list)
     if my_list == None:
-        return
+        return my_list
 
     while len_of_list > 0:
         print("{:d}".format(my_list[len_of_list - 1]))
