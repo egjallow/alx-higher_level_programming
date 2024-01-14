@@ -10,4 +10,3 @@ def add_tuple(tuple_a=(), tuple_b=()):
             b = tuple_b[i]
         tuple_c = tuple_c + (a + b,)
     return (tuple_c)
-
