@@ -3,4 +3,6 @@
 
 
 class Square:
+    """This is a square class"""
+
     pass
