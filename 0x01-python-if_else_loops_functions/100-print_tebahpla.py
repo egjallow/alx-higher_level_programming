@@ -2,6 +2,7 @@
 
 
 for i in range(122, 96, -1):
-    print(chr(i), end='')
-    if i != 97:
+    if i % 2 == 0:
+        print(chr(i), end='')
+    else:
         print(chr(i - 32), end='')
