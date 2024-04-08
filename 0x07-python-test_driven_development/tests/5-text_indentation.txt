@@ -1,0 +1,99 @@
+* text_indentation doctest *
+____________________________
+
+>>> text_indentation = __import__('5-text_indentation').text_indentation
+
+>>> text_indentation("test.     ")
+test.
+<BLANKLINE>
+
+
+>>> text_indentation("test? ")
+test?
+<BLANKLINE>
+
+>>> text_indentation(": .")
+:
+<BLANKLINE>
+.
+<BLANKLINE>
+
+>>> text_indentation("test:")
+test:
+<BLANKLINE>
+
+
+>>> text_indentation("test")
+test
+
+>>> text_indentation(".test")
+.
+<BLANKLINE>
+test
+
+>>> text_indentation("   .test")
+.
+<BLANKLINE>
+test
+
+
+>>> text_indentation("test   ")
+test   
+
+>>> text_indentation("test   test")
+test   test
+
+
+>>> text_indentation("")
+
+
+>>> text_indentation("test   .   ")
+test   .
+<BLANKLINE>
+
+
+>>> text_indentation("test.test")
+test.
+<BLANKLINE>
+test
+
+>>> text_indentation(".:?")
+.
+<BLANKLINE>
+:
+<BLANKLINE>
+?
+<BLANKLINE>
+
+>>> text_indentation("  ")
+ 
+
+>>> text_indentation(":   ")
+:
+<BLANKLINE>
+
+>>> text_indentation("test:       .")
+test:
+<BLANKLINE>
+.
+<BLANKLINE>
+
+>>> text_indentation("   .test:   ")
+.
+<BLANKLINE>
+test:
+<BLANKLINE>
+
+
+>>> text_indentation("t")
+t
+
+>>> text_indentation("t:     t")
+t:
+<BLANKLINE>
+t
+
+>>> text_indentation(9)
+Traceback (most recent call last):
+    ...
+TypeError: text must be a string

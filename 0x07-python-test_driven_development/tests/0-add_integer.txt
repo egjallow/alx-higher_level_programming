@@ -1,0 +1,49 @@
+* add_integer test module *
+___________________________
+
+"""
+
+>>> add_integer = __import__('0-add_integer').add_integer
+
+>>> from add_integer import add_integer
+
+# Test adding two integers
+>>> add_integer(1, 2)
+3
+
+# Test adding an integer and a float
+>>> add_integer(1, 2.5)
+3
+
+# Test adding two floats
+>>> add_integer(1.5, 2.5)
+3
+
+# Test adding with default value
+>>> add_integer(1)
+99
+
+# Test adding with negative integers
+>>> add_integer(-1, -2)
+-3
+
+# Test adding with one negative integer
+>>> add_integer(-1, 2)
+1
+
+# Test adding with one negative integer and a float
+>>> add_integer(-1, 2.5)
+1
+
+# Test adding with negative floats
+>>> add_integer(-1.5, -2.5)
+-3
+
+# Test adding with a string parameter - should raise TypeError
+>>> add_integer(1, "2")
+Traceback (most recent call last):
+    ...
+TypeError: b must be an integer
+"""
+
+
