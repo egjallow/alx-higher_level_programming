@@ -2,4 +2,5 @@
 """Create an empty rectangle class"""
 
 class Rectangle:
-  pass
+    """an empty Rectangle class"""
+    pass
