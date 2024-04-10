@@ -2,18 +2,20 @@
 """
 This module defines Rectangle Object.
 """
+
+
 class Rectangle:
-
-
     """
     Retangle object with getter and setters
     """
+
     def __init__(self, width=0, height=0):
         self.width = width
         self.height = height
 
     @property
     def width(self):
+        """privat method"""
         return self.__width
 
     @width.setter
@@ -26,6 +28,7 @@ class Rectangle:
 
     @property
     def height(self):
+        """private height property"""
         return self.__height
 
     @height.setter
