@@ -43,6 +43,6 @@ class Rectangle:
         """calculate the area of a rec"""
         return self.height * self.width
 
-    def permeter(self):
+    def perimeter(self):
         """calculate a perimeter of a rec"""
         return (2 * self.height) + (2 * self.width)
