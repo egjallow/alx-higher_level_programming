@@ -5,3 +5,4 @@
 def lookup(obj):
     """function with arg and retun dir of it"""
     return dir(obj)
+
