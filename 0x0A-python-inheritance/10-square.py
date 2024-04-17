@@ -6,6 +6,7 @@ class Square(Rectangle):
     """
     class Square that inherits from rectangle
     """
+
     def __init__(self, size):
         """
         instantiates square

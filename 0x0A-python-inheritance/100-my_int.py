@@ -3,6 +3,7 @@ class MyInt(int):
     """
     rebel class with reversed == and !=
     """
+
     def __eq__(self, other):
         """
         inverted eq method
