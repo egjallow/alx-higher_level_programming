@@ -12,5 +12,6 @@ class MyList(list):
         prints list in ascending sort
         """
         sort_list = super().copy()
-        sort_list.sort()
+        sort_list = sorted(sort_list)
         print(sort_list)
+        
