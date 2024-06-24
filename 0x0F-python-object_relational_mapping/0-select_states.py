@@ -1,4 +1,4 @@
-#!.usr/bin/python3
+#!/usr/bin/python3
 """Lits all state from the databse hbtn_0e_0_usa"""
 
 if __name__== '__main__':
