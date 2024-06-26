@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """
-This script lists the first State object from database passed into program
+This script updates the State object with id 2
+with a new state name: New Mexico
 """
 
 
@@ -8,6 +9,7 @@ import sys
 from model_state import Base, State
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
+from sqlalchemy import update
 
 if __name__ == "__main__":
     engine = create_engine('mysql+mysqldb://{}:{}@localhost:3306/{}'
@@ -16,9 +18,8 @@ if __name__ == "__main__":
     Session = sessionmaker(bind=engine)
     session = Session()
 
-    state = session.query(State).first()
+    session.query(State) \
+        .filter(State.id == 2) \
+        .update({State.name: "New Mexico"})
 
-    if not state:
-        print("Nothing")
-    else:
-        print("{}: {}".format(state.id, state.name))
+    session.commit()

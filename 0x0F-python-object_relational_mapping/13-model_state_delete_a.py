@@ -1,6 +1,10 @@
 #!/usr/bin/python3
 """
-This script lists the first State object from database passed into program
+This script deletes all State objects
+with a name containing the letter 'a'
+from the database passed into the program
+This script takes 3 arguments: mysql username,
+mysql password, and database name.
 """
 
 
@@ -8,6 +12,7 @@ import sys
 from model_state import Base, State
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
+from sqlalchemy import update
 
 if __name__ == "__main__":
     engine = create_engine('mysql+mysqldb://{}:{}@localhost:3306/{}'
@@ -16,9 +21,8 @@ if __name__ == "__main__":
     Session = sessionmaker(bind=engine)
     session = Session()
 
-    state = session.query(State).first()
+    session.query(State) \
+        .filter(State.name.ilike('%a%')) \
+        .delete(synchronize_session=False)
 
-    if not state:
-        print("Nothing")
-    else:
-        print("{}: {}".format(state.id, state.name))
+    session.commit()

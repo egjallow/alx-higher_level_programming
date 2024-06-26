@@ -1,6 +1,8 @@
 #!/usr/bin/python3
 """
-This script lists the first State object from database passed into program
+This script adds the State object "Louisiana"
+to the database passed to the program and
+prints the id of the new State object.
 """
 
 
@@ -16,9 +18,9 @@ if __name__ == "__main__":
     Session = sessionmaker(bind=engine)
     session = Session()
 
-    state = session.query(State).first()
+    louisiana = State(name="Louisiana")
 
-    if not state:
-        print("Nothing")
-    else:
-        print("{}: {}".format(state.id, state.name))
+    session.add(louisiana)
+    session.commit()
+
+    print("{}".format(louisiana.id))
