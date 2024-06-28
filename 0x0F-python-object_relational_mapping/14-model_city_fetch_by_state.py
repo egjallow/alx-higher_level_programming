@@ -6,17 +6,26 @@ state names, city names, and city ids.
 """
 
 
-import sys
+from sys import argv
 from model_state import Base, State
 from model_city import City
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
+from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy import update
+from urllib.parse import quote_plus;
 
 if __name__ == "__main__":
-    engine = create_engine('mysql+mysqldb://{}:{}@localhost:3306/{}'
-                           .format(sys.argv[1], sys.argv[2], sys.argv[3]))
-    Base.metadata.create_all(engine)
+
+    username = argv[1]
+    password = argv[2]
+    db_name = argv[3]
+    host = 'localhost'
+    port = 3306
+
+    engine = create_engine(
+        f'mysql+mysqldb://{username}:{quote_plus(password)}@{host}:{port}/{db_name}')
+    Base = declarative_base()
     Session = sessionmaker(bind=engine)
     session = Session()
 
