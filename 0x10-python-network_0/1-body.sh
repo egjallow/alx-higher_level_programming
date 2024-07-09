@@ -1,3 +1,3 @@
 #!/bin/bash
 #script to display content od a site
-curl "$1"
+curl -SL "$1"
