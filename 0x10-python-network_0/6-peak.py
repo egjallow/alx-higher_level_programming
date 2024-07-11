@@ -4,5 +4,6 @@
 
 def find_peak(list_of_integers):
     """ find the peak number with the shortest algorithm"""
+
     l = list_of_integers
     return max(l) if l else None
